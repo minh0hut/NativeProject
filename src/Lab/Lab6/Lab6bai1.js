@@ -86,7 +86,7 @@ const Lab6bai1 = (props) => {
       </View>
       <View style={styles.buttoncontai}>
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Lab6bai2')}>
-          <Text style={styles.textbutton}>Lab 6 Lab6bai2 2</Text>
+          <Text style={styles.textbutton}>Lab 6 bài 2 </Text>
         </TouchableOpacity>
       </View>
     </View>

@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 function App(): React.ReactElement {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Lab6bai1'>
+      <Stack.Navigator initialRouteName='Lab7'>
         <Stack.Screen name="Lab6bai1" component={Lab6bai1} options={{ headerShown: false}} />
         <Stack.Screen name="Detail" component={Detail} options={{ headerShown: false}} />
         <Stack.Screen name="Lab6bai2" component={Lab6bai2}  options={{ headerShown: false}}/>

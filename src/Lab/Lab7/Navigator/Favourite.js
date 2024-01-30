@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import Direct from './Direct'; // Import Direct component
+import { useNavigation } from '@react-navigation/native'; // Import useNavigation hook
+import Direct from './Direct'; 
 
 const Favourite = () => {
+  const navigation = useNavigation(); // Access the navigation object
+
   const [selectedBranch, setSelectedBranch] = useState('');
   const [name, setName] = useState('');
   const [masv, setMasv] = useState('');
@@ -14,7 +17,7 @@ const Favourite = () => {
     setSelectedBranch(value);
   };
 
-  const onSubmit = () => {
+  const handleOnSubmit = () => {
     if (
       name.trim() === '' ||
       masv.trim() === '' ||
@@ -23,7 +26,8 @@ const Favourite = () => {
     ) {
       alert('Vui lòng nhập đầy đủ thông tin');
     } else {
-      setSubmitted(true);
+      // Gọi hàm navigate và truyền dữ liệu
+      navigation.navigate('Direct', { name, masv, lop, selectedBranch });
     }
   };
 
@@ -77,14 +81,10 @@ const Favourite = () => {
       </View>
 
       <View style={styles.buttoncontai}>
-        <TouchableOpacity style={styles.button} onPress={onSubmit}>
+        <TouchableOpacity style={styles.button} onPress={handleOnSubmit}>
           <Text style={styles.textbutton}>Submit</Text>
         </TouchableOpacity>
       </View>
-
-      {submitted && (
-        <Direct data={{ name, masv, lop, selectedBranch }} />
-      )}
 
     </View>
   );

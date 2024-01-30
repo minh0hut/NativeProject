@@ -11,6 +11,8 @@ import ThongTin from './src/Lab/Lab8/ThongTin';
 import SuaThongTin from './src/Lab/Lab8/SuaThongTin';
 import Demo10 from './src/demo/Demo10';
 import Lab4bai1 from './src/Lab/Lab4/Lab4';
+import Favourite from './src/Lab/Lab7/Navigator/Favourite';
+import Direct from './src/Lab/Lab7/Navigator/Direct';
 const Stack = createStackNavigator();
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
         <Stack.Screen name="SuaThongTin" component={SuaThongTin} options={{ headerShown: false }} />
         <Stack.Screen name="Lab4" component={Lab4bai1} options={{ headerShown: false }} />
         <Stack.Screen name="Demo10" component={Demo10} options={{ headerShown: false }} />
+        <Stack.Screen name="Favourite" component={Favourite} options={{ headerShown: false }} />
+        <Stack.Screen name="Direct" component={Direct} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

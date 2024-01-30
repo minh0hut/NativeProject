@@ -1,17 +1,14 @@
-import {View, Text, StyleSheet, Button} from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 import React from 'react';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 const customUuidGenerator = () => {
   const randomThreeDigitNumber = Math.floor(100 + Math.random() * 900);
   return randomThreeDigitNumber.toString();
 };
 
-const Detail = ({route}) => {
-  const {name} = route.params;
-  const {masv} = route.params;
-  const {lop} = route.params;
-  const {selectedBranch} = route.params;
+const Detail = ({ route }) => {
+  const { name} = route?.params?? {};
   const navigation = useNavigation();
 
   const userId = customUuidGenerator();
@@ -19,28 +16,15 @@ const Detail = ({route}) => {
   return (
     <View style={styles.container}>
       <View style={styles.row}>
-        <Text style={{color: 'black', fontSize: 20, fontWeight: 'bold'}}>
+        <Text style={{ color: 'blue', fontSize: 20, fontWeight: 'bold' }}>
           Chào bạn:
         </Text>
-        <Text style={{color: 'blue', fontSize: 16, marginTop: 5}}> {name}</Text>
+        <Text style={{ color: 'blue', fontSize: 16, marginTop: 5 }}> {name}</Text>
+
       </View>
-      <View style={styles.table}>
-        <View style={styles.row}>
-          <Text style={styles.label}>Mã sinh viên </Text>
-          <Text style={styles.value}>{masv}</Text>
-        </View>
-        <View style={styles.row}>
-          <Text style={styles.label}>Lớp:</Text>
-          <Text style={styles.value}>{lop}</Text>
-        </View>
-        <View style={styles.row}>
-          <Text style={styles.label}>Ngành:</Text>
-          <Text style={styles.value}>{selectedBranch}</Text>
-        </View>
-        <View style={styles.row}>
-          <Text style={styles.label}>Id của bạn là:</Text>
-          <Text style={styles.value}>{userId}</Text>
-        </View>
+      <View style={styles.row}>
+        <Text style={styles.label}>Id của bạn là,</Text>
+        <Text style={styles.value}>{userId}</Text>
       </View>
       <View style={styles.buttonContainer}>
         <Button title="Trở lại bằng goBack" onPress={navigation.goBack} />
@@ -48,7 +32,7 @@ const Detail = ({route}) => {
       <View style={styles.buttonContainer}>
         <Button
           title="Trở lại bằng reset"
-          onPress={() => navigation.reset({routes: [{name: 'Lab6bai1'}]})}
+          onPress={() => navigation.reset({ routes: [{ name: 'Lab6bai1' }] })}
         />
       </View>
       <View style={styles.buttonContainer}>
@@ -83,7 +67,6 @@ const styles = StyleSheet.create({
   },
   label: {
     color: '#000',
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     fontWeight: 'bold',
@@ -91,7 +74,6 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   value: {
-    flex: 1,
     color: 'blue',
     fontSize: 14,
   },

@@ -21,13 +21,14 @@ function CustomDrawerContent(props) {
     <DrawerContentScrollView {...props}>
       <LinearGradient
         style={styles.drawerContentPart1}
-        colors={['#026466', '#cfdc00']}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }}>
+        colors={['#FF0000', '#0000FF']}
+        start={{ x: 1, y: 5 }}
+        end={{ x: 0, y: 1 }}
+        >
         <View>
-          <Image source={{ uri: 'https://scontent.fsgn8-4.fna.fbcdn.net/v/t39.30808-6/366951547_963873168001490_5844081063537264814_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeHBtbESaCeGN5FmqYgAW23d78uKUXrriUfvy4pReuuJRxaWHoIjyBVJ78HnvORuj4JH0qL6CxPfq5BPtH9yPJrD&_nc_ohc=CY-4CWmUueEAX95FGxJ&_nc_ht=scontent.fsgn8-4.fna&oh=00_AfDFhVm_tCVXuGXmACfp0XwK9R2qFVZlz73GAusxAYAb4Q&oe=65BC3773' }} style={styles.image} />
-          <Text style={styles.gradientText}>Nguyễn Minh Nhựt</Text>
-          <Text style={styles.textgmail}>nhutchodiennguyen2306@gmail.com</Text>
+          <Image source={{ uri: 'https://cdn.sforum.vn/sforum/wp-content/uploads/2023/11/avatar-dep-89.jpg' }} style={styles.image} />
+          <Text style={styles.gradientText}>Lê Thị Cẩm Giang</Text>
+          <Text style={styles.textgmail}>giang@gmail.com</Text>
         </View>
       </LinearGradient>
       <View style={styles.drawerContentPart2}>
@@ -40,7 +41,6 @@ function CustomDrawerContent(props) {
 function Lab6bai2(props) {
   const { navigation } = props;
   return (
-    // <NavigationContainer independent>
       <Drawer.Navigator
         drawerContent={props => <CustomDrawerContent {...props} />}>
         <Drawer.Screen
@@ -48,7 +48,7 @@ function Lab6bai2(props) {
           component={Lab6bai1}
           options={{
             drawerLabel: 'Home',
-            drawerIcon: ({ size, color }) => (
+            drawerIcon: ({ size }) => (
               <Image
                 source={require('./../../image/home.png')}
                 style={{ width: size, height: size }}
@@ -152,7 +152,6 @@ function Lab6bai2(props) {
           }}
         />
       </Drawer.Navigator>
-    // </NavigationContainer>
   );
 }
 
@@ -168,13 +167,13 @@ const styles = StyleSheet.create({
     borderRadius: 40,
   },
   gradientText: {
-    color: '#bd081c',
+    color: 'orange',
     fontSize: 18,
     marginTop: 20,
     fontWeight: 'bold',
   },
   textgmail: {
-    color: 'white',
+    color: 'black',
     fontSize: 14,
     marginTop: 5,
   },

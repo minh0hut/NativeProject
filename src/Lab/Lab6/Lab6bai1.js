@@ -14,71 +14,21 @@ const Lab6bai1 = (props) => {
     setSelectedBranch(value);
   };
   const onSubmit = () => {
-    if (
-      name.trim() === '' ||
-      masv.trim() === '' ||
-      lop.trim() === '' ||
-      selectedBranch === ''
-    ) {
-      alert('Vui lòng nhập đầy đủ thông tin');
-      return;
-    } else {
       navigation.navigate('Detail', { name, masv, lop, selectedBranch });
-    }
   };
 
   return (
     <View style={styles.container}>
-      <View style={styles.thongtinsv}>
-        <Text style={{ color: '#ce1126', fontSize: 16, fontWeight: 'bold' }}>
-          Thông tin sinh viên
-        </Text>
-      </View>
+     
       <View style={styles.inputContainer}>
-        <Text style={styles.text}>Nhập tên</Text>
+        <Text style={styles.text}>Chào bạn, đây là màng hình chính</Text>
         <TextInput
-          placeholder="Nhập họ tên"
+          placeholder="Lê Thị Cẩm Giang"
           style={styles.input}
           value={name}
           onChangeText={text => setName(text)}
         />
       </View>
-      <View style={styles.inputContainer}>
-        <Text style={styles.text}>Nhập mã sinh viên</Text>
-        <TextInput
-          placeholder="Nhập mã sinh viên"
-          style={styles.input}
-          value={masv}
-          onChangeText={text => setMasv(text)}
-        />
-      </View>
-      <View style={styles.inputContainer}>
-        <Text style={styles.text}>Nhập lớp</Text>
-        <TextInput
-          placeholder="Nhập lớp"
-          style={styles.input}
-          value={lop}
-          onChangeText={text => setLop(text)}
-        />
-      </View>
-      <Text style={styles.text}>Chọn Ngành</Text>
-      <View style={styles.inputlabel}>
-        <Picker
-          selectedValue={selectedBranch}
-          onValueChange={onBranchChange}
-          style={styles.picker}>
-          <Picker.Item label="Chọn ngành" value="" style={styles.pickerLabel} />
-          <Picker.Item label="Lập trình mobile" value="Lập trình mobile" />
-          <Picker.Item label="Ứng dụng phần mềm" value="Ứng dụng phần mềm" />
-          <Picker.Item label="Lập trình Web" value="Lập trình Web" />
-          <Picker.Item
-            label="Phát triển phần mềm"
-            value="Phát triển phần mềm"
-          />
-          <Picker.Item label="Lập trình game" value="Lập trình game" />
-        </Picker>
-      </View>
-
       <View style={styles.buttoncontai}>
         <TouchableOpacity style={styles.button} onPress={onSubmit}>
           <Text style={styles.textbutton}>Submit</Text>
@@ -86,7 +36,7 @@ const Lab6bai1 = (props) => {
       </View>
       <View style={styles.buttoncontai}>
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Lab6bai2')}>
-          <Text style={styles.textbutton}>Lab 6 Lab6bai2 2</Text>
+          <Text style={styles.textbutton}>Lab6bai2</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -157,9 +107,9 @@ const styles = StyleSheet.create({
     borderColor: '#026466',
   },
   text: {
-    color: '#000',
+    color: 'blue',
     fontWeight: 'bold',
-    fontSize: 13,
+    fontSize: 20,
     marginBottom: 7,
   },
 });

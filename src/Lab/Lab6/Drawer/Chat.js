@@ -3,10 +3,10 @@ import React from 'react'
 
 const Chat = () => {
   return (
-    <View style={{backgroundColor:'black', flex:1}}>
+    <View>
      <Image
-        source={{uri: 'https://lh3.googleusercontent.com/pw/ABLVV85a1IF0l0B8sNkResnxFtm-b0z3JfCFlt2PKs4YJFgssv2iaUx5dqdNiHtk_vCb6OUSVOJ0lMQT0Bl-Pw6STNpyxEru2viiILX4BYUiCo0fXFjcPYQPBk_4jsVsBWd6689dzOmQVZATE808415vXDr7=w1237-h928-s-no-gm?authuser=0'}}
-        style={{ width: '100%',}}
+        source={{uri: 'https://i0.wp.com/thatnhucuocsong.com.vn/wp-content/uploads/2022/04/Anh-avatar-dep-anh-dai-dien-FB-Tiktok-Zalo.jpg?ssl=1'}}
+        style={{ width: '100%',height:'100%'}}
       />
     </View>
   )

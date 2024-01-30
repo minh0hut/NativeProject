@@ -9,7 +9,8 @@ import Lab7 from './src/Lab/Lab7/Lab7';
 import Lab8bai1 from './src/Lab/Lab8/Lab8bai1';
 import ThongTin from './src/Lab/Lab8/ThongTin';
 import SuaThongTin from './src/Lab/Lab8/SuaThongTin';
-import AxiosInstance from './src/Lab/Lab8/AxiosInstance';
+import Demo10 from './src/demo/Demo10';
+import Lab4bai1 from './src/Lab/Lab4/Lab4';
 const Stack = createStackNavigator();
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
         <Stack.Screen name="Lab8bai1" component={Lab8bai1} options={{ headerShown: false }} />
         <Stack.Screen name="ThongTin" component={ThongTin} options={{ headerShown: false }} />
         <Stack.Screen name="SuaThongTin" component={SuaThongTin} options={{ headerShown: false }} />
-
+        <Stack.Screen name="Lab4" component={Lab4bai1} options={{ headerShown: false }} />
+        <Stack.Screen name="Demo10" component={Demo10} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

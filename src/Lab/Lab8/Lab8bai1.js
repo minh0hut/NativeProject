@@ -55,9 +55,9 @@ const Lab8bai1 = (props) => {
     });
 
     const renderItem = ({ item }) => (
-        <TouchableOpacity onPress={() => navigation.navigate('Thông tin', { navigation: navigation, user: item })}>
-            <View style={styles.itemContainer}>
+        <TouchableOpacity onPress={() => navigation.navigate('ThongTin', { navigation: navigation, user: item })}>
 
+            <View style={styles.itemContainer}>
                 <View style={styles.top}>
                     <Text style={styles.name}>{item.name}</Text>
                     <Text style={styles.birthDay}>{unixTime(item.birthDay)}</Text>
@@ -96,13 +96,13 @@ const Lab8bai1 = (props) => {
 
 const styles = StyleSheet.create({
     delete: {
-        backgroundColor: 'red',
+        backgroundColor: '#CCFF00',
         padding: 10,
         borderRadius: 5,
         marginStart: 20,
     },
     edit: {
-        backgroundColor: 'blue',
+        backgroundColor: '#99FFFF',
         padding: 10,
         borderRadius: 5,
     },
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     },
     btnAddContainer: {
         width: '100%',
-        backgroundColor: 'orange',
+        backgroundColor: '#C0C0C0',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
@@ -163,6 +163,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        backgroundColor: '#FFFFCC',
         padding: 10,
     }
 });

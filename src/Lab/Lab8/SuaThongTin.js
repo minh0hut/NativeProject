@@ -10,7 +10,7 @@ const SuaThongTin = ({ route }) => {
     const [birthDay, setBirthDay] = useState('');
     const [linkAnh, setLinkAnh] = useState('');
     const [buttonTitle, setButtonTitle] = useState('Thêm tài khoản');
-    const [title, setTitle] = useState('Tạo mới tài khoản');
+    const [title, setTitle] = useState('Tạo tài khoản');
 
     useEffect(() => {
         if (user != null) {
@@ -21,7 +21,7 @@ const SuaThongTin = ({ route }) => {
             setLinkAnh(user?.url_avatar);
             console.log(user);
         } else {
-            // console.log('User is undefined or null');
+            console.log('User is undefined or null');
         }
     }, []);
 
@@ -77,7 +77,7 @@ const SuaThongTin = ({ route }) => {
             <View style={styles.inputContainer}>
                 <TextInput
                     style={styles.input}
-                    placeholder="Nhập ngày tháng năm sinh (dd-mm-yyyy)"
+                    placeholder="Nhập ngày tháng năm sinh"
                     placeholderTextColor={'black'}
                     value={birthDay}
                     keyboardType='number-pad'
@@ -100,11 +100,9 @@ const SuaThongTin = ({ route }) => {
         </View>
     )
 }
-
 export default SuaThongTin
-
 const unixTimeToDate = (unixTime) => {
-    const date = new Date(unixTime * 1000); // Đổi giây thành mili giây
+    const date = new Date(unixTime * 1000);
     const day = date.getDate().toString().padStart(2, '0');
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const year = date.getFullYear();
@@ -146,7 +144,7 @@ const styles = StyleSheet.create({
     },
     btnAddContainer: {
         width: '100%',
-        backgroundColor: 'orange',
+        backgroundColor: '#c0c0c0',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
@@ -186,5 +184,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        backgroundColor:'#FFFFCC',
+        justifyContent: 'center'
     }
 })

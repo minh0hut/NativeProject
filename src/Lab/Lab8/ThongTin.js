@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     },
     back: {
         width: '100%',
-        backgroundColor: 'orange',
+        backgroundColor: '#C0C0C0',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     name: {
-        color: 'orange',
+        color: '#00FF00',
         fontFamily: 'Poppins',
         fontSize: 24,
         fontWeight: 'bold',
@@ -76,5 +76,6 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        backgroundColor:'#FFFFCC',
     }
 })

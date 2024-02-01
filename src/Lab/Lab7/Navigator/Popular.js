@@ -1,12 +1,19 @@
-import { View, Text,Image} from 'react-native'
-import React from 'react'
+import {View, Text, Image} from 'react-native';
+import React from 'react';
 
 const Popular = () => {
   return (
-    <View style={{backgroundColor:'#fff', flex:1}}>
-    <Text>Popular</Text>
-   </View>
-  )
-}
+    <View
+      style={{
+        backgroundColor: 'black',
+        width: '100%',
+        height: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+      <Text style={{fontSize: 40, color: '#fff'}}>Popular</Text>
+    </View>
+  );
+};
 
-export default Popular
+export default Popular;

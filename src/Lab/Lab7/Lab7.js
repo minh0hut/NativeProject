@@ -1,68 +1,44 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { View, Text } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './Navigator/Home';
 import Call from './Navigator/Call';
 import Article from './Navigator/Article';
 import Setting from './Navigator/Settings';
+import Entypo from 'react-native-vector-icons/Entypo';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
-const homeIconPath = require('../../image/home.png');
-const articleIconPath = require('../../image/newspaper.png');
-const callIconPath = require('../../image/ic_search.png');
-const settings = require('../../image/settings.png');
-const size = 16;
+const homeIcon = <Entypo name="home" size={20} color="black" />;
+const articleIcon = <MaterialIcons name="article" size={20} color="black" />;
+const callIcon = <Ionicons name="call" size={20} color="black" />;
+const settingsIcon = <AntDesign name="setting" size={20} color="black" />;
 
-const renderIcon = (iconPath, props) => (
-  <Image
-    source={iconPath}
-    style={{tintColor: 'black', width: size, height: size}}
-    onError={error =>
-      console.log(`Lỗi ảnh: ${error.nativeEvent.error}`)
-    }
-  />
+const renderLabel = ({ focused, color, children }) => (
+  <Text style={{ color: focused ? (color || '#ff6c22') : 'black' }}>{children}</Text>
 );
 
-const renderLabel = props => {
-  const { focused, color } = props;
-  return focused ? (
-    <Text style={{ color: color || '#ff6c22' } }>{props.children}</Text>
-  ) : (
-    <Text style={{ color: 'black' }}>{props.children}</Text>
-  );
-};
-
-const ICON_MENU = {
-  Home: homeIconPath,
-  Article: articleIconPath,
-  Call: callIconPath,
-  Settings: settings,
-};
-
 const Tab = createBottomTabNavigator();
-const screenOptions = {
-  tabBarLabelPosition: 'beside-icon',
-};
 
 const Lab7 = () => {
   return (
     <Tab.Navigator
       tabBarOptions={{
-        activeTintColor: '#ff6c22', 
+        activeTintColor: '#ff6c22',
         inactiveTintColor: 'black',
         headerShown: false,
         tabBarLabelStyle: {
           flexDirection: 'row',
         },
-        
       }}>
       <Tab.Screen
         name="Home"
         component={Home}
         options={{
           headerShown: false,
-          tabBarIcon: props => renderIcon(ICON_MENU.Home, props),
+          tabBarIcon: ({ color }) => homeIcon,
           tabBarLabel: props => renderLabel(props),
-          
         }}
       />
       <Tab.Screen
@@ -70,7 +46,7 @@ const Lab7 = () => {
         component={Article}
         options={{
           headerShown: false,
-          tabBarIcon: props => renderIcon(ICON_MENU.Article, props),
+          tabBarIcon: ({ color }) => articleIcon,
           tabBarLabel: props => renderLabel(props),
         }}
       />
@@ -79,18 +55,16 @@ const Lab7 = () => {
         component={Call}
         options={{
           headerShown: false,
-          tabBarIcon: props => renderIcon(ICON_MENU.Call, props),
+          tabBarIcon: ({ color }) => callIcon,
           tabBarLabel: props => renderLabel(props),
-  
         }}
       />
-
       <Tab.Screen
         name="Settings"
         component={Setting}
         options={{
           headerShown: false,
-          tabBarIcon: props => renderIcon(ICON_MENU.Settings, props),
+          tabBarIcon: ({ color }) => settingsIcon,
           tabBarLabel: props => renderLabel(props),
         }}
       />
